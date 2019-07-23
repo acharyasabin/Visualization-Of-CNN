@@ -9,9 +9,6 @@ from pprint import pprint
 import matplotlib.pyplot as plt
 
 
-labels={ 0 : "CAT",
-         1 : "DOG",
-         2 : "HORSE"}
 
 def plot_feature_maps(feature_maps):
     """
@@ -62,9 +59,9 @@ image = np.expand_dims(image, axis=0)
 feature_maps = features_extractor.predict(image)[0]
 activation_map = plot_feature_maps(feature_maps)
 # print(activation_map)
-plt.subplot(1, 2,1)
+plt.subplot(1, 2, 1)
 plt.imshow(orig)
-plt.subplot(1, 2,2)
+plt.subplot(1, 2, 2)
 plt.imshow(cv2.resize(activation_map,(w,h)))
 plt.savefig('activation/data.png')
 plt.show()
